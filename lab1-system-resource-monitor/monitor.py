@@ -60,5 +60,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-    print(load_config("config.yaml"))
-    print(setup_logging("monitor.log"))
+    config = load_config()
+    setup_logging(config['log_file'])
+    logging.info("Test message - logging works!")
