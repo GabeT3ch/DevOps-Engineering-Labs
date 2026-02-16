@@ -21,9 +21,13 @@ def load_config(config_path="config.yaml"):
 
 def setup_logging(log_file):
     """Configure logging to both file and terminal."""
-    # TODO: Set up logging so output goes to both the log file AND the terminal
-    # HINT: Look into logging.basicConfig() and logging.StreamHandler()
-    pass
+    logging.basicConfig(filename=log_file, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    console_handler.setFormatter(formatter)
+    logging.getLogger().addHandler(console_handler)
+
 
 
 def get_system_metrics():
@@ -56,4 +60,5 @@ def main():
 
 if __name__ == "__main__":
     main()
-    print(load_config("config.yml"))
+    print(load_config("config.yaml"))
+    print(setup_logging("monitor.log"))
