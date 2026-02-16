@@ -1,9 +1,6 @@
-#!/usr/bin/env python3
-"""
-System Resource Monitor
-Monitors CPU, memory, and disk usage on the local machine.
-Logs readings and alerts when thresholds are exceeded.
-"""
+#System Resource Monitor Monitors CPU, memory, and disk usage on the local machine.
+#Logs readings and alerts when thresholds are exceeded.
+
 
 from logging import config
 import psutil
