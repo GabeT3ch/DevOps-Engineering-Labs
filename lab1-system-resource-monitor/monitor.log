@@ -1,1 +1,15 @@
 2026-02-16 12:22:52,295 - INFO - Test message - logging works!
+2026-02-16 12:33:45,619 - INFO - Monitor started.
+2026-02-16 12:33:46,620 - INFO - CPU: 5.6% | Memory: 27.7% | Disk: 63.0%
+2026-02-16 12:33:56,616 - INFO - Monitor started.
+2026-02-16 12:33:57,617 - INFO - CPU: 4.1% | Memory: 27.3% | Disk: 63.0%
+2026-02-16 12:34:04,266 - INFO - Monitor started.
+2026-02-16 12:34:05,267 - INFO - CPU: 4.4% | Memory: 26.7% | Disk: 63.0%
+2026-02-16 12:35:27,193 - INFO - Monitor started.
+2026-02-16 12:35:28,194 - INFO - CPU: 8.4% | Memory: 27.1% | Disk: 63.0%
+2026-02-16 12:35:39,195 - INFO - CPU: 4.4% | Memory: 27.2% | Disk: 63.0%
+2026-02-16 12:35:50,196 - INFO - CPU: 1.5% | Memory: 26.8% | Disk: 63.0%
+2026-02-16 12:36:01,197 - INFO - CPU: 1.9% | Memory: 26.8% | Disk: 63.0%
+2026-02-16 12:36:12,198 - INFO - CPU: 2.8% | Memory: 26.8% | Disk: 63.0%
+2026-02-16 12:36:20,268 - INFO - Monitor stopped.
+2026-02-16 12:36:20,268 - INFO - Test message - logging works!

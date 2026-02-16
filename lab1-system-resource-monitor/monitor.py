@@ -5,6 +5,7 @@ Monitors CPU, memory, and disk usage on the local machine.
 Logs readings and alerts when thresholds are exceeded.
 """
 
+from logging import config
 import psutil
 import yaml
 import time
@@ -53,17 +54,20 @@ def check_thresholds(metrics, thresholds):
 
 
 def main():
-    """Main monitoring loop."""
-    
-    # TODO: Load config
-    # TODO: Set up logging
-    # TODO: Run a loop that:
-    #   1. Gets system metrics
-    #   2. Logs the current readings
-    #   3. Checks thresholds and logs any alerts
-    #   4. Sleeps for the configured interval
-    # TODO: Handle KeyboardInterrupt (Ctrl+C) for clean shutdown
-    pass
+    config = load_config()
+    setup_logging(config['log_file'])
+    logging.info("Monitor started.")
+
+    try:
+        while True:
+            metrics = get_system_metrics()
+            logging.info(f"CPU: {metrics['cpu_percent']}% | Memory: {metrics['memory_percent']}% | Disk: {metrics['disk_percent']:.1f}%")
+            alerts = check_thresholds(metrics, config['thresholds'])
+            for alert in alerts:
+                logging.warning(alert)
+            time.sleep(load_config()['interval_seconds'])
+    except KeyboardInterrupt:
+        logging.info("Monitor stopped.")
 
 
 if __name__ == "__main__":
