@@ -18,11 +18,6 @@ def load_config(config_path="config.yaml"):
         config = yaml.safe_load(file)
         return config
 
-    # TODO: Open and parse the YAML config file
-    # TODO: Return the config as a dictionary
-    # HINT: Use yaml.safe_load()
-    
-
 
 def setup_logging(log_file):
     """Configure logging to both file and terminal."""
