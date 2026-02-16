@@ -72,6 +72,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    config = load_config()
-    setup_logging(config['log_file'])
-    logging.info("Test message - logging works!")
+    
