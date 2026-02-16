@@ -14,6 +14,10 @@ from datetime import datetime
 
 def load_config(config_path="config.yaml"):
     """Load monitoring thresholds and settings from config file."""
+    file_path = config_path
+    opened_file = open(file_path, 'r')
+    config = yaml.safe_load(opened_file)
+
     # TODO: Open and parse the YAML config file
     # TODO: Return the config as a dictionary
     # HINT: Use yaml.safe_load()
