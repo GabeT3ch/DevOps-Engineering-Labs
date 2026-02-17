@@ -1,9 +1,6 @@
-#!/usr/bin/env python3
-"""
-Log Analyzer
-Parses system log files, categorizes entries by severity,
-and generates a summary report.
-"""
+#Log Analyzer
+#Parses system log files, categorizes entries by severity,and generates a summary report.
+
 
 import argparse
 from datetime import datetime
