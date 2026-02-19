@@ -1,4 +1,4 @@
-# DevOps Engineering Labs
+# DevOps/DevSecOps Engineering Labs
 
 Hands-on labs focused on the core skills of DevOps and infrastructure engineering — automation, monitoring, CI/CD, containers, and infrastructure as code. Each lab solves a real operational problem using tools and patterns found in production environments.
 
