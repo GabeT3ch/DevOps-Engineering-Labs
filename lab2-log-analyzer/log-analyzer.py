@@ -16,7 +16,7 @@ def parse_arguments():
     return parser.parse_args()
 
 def parse_log_line(line):
-    """Parse a single log line into its components (timestamp, level, message)."""
+    #Parse a single log line into its components (timestamp, level, message)
     parts = line.split((" - "))
     return {
             "timestamp": datetime.strptime(parts[0], "%Y-%m-%d %H:%M:%S,%f"),
@@ -25,11 +25,14 @@ def parse_log_line(line):
         }
 
 def read_log_file(filepath):
-    """Read log file and return list of parsed entries."""
-    # TODO: Open the file, read each line, parse it with parse_log_line()
-    # TODO: Return a list of parsed entries
-    # TODO: Handle FileNotFoundError
-    pass
+    #Read log file and return list of parsed entries with error handling for file not found
+    try:
+        with open(filepath, "r") as log_file:
+            return [parse_log_line(line) for line in log_file]
+    except FileNotFoundError:
+        print(f"Error: Log file '{filepath}' not found.")
+        return []
+    
 
 
 def filter_entries(entries, level=None, keyword=None, after=None, before=None):
