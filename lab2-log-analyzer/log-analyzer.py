@@ -55,23 +55,26 @@ def filter_entries(entries, level=None, keyword=None, after=None, before=None):
 
 def generate_report(entries, filepath):
     #Generate and print the summary report.
-
- 
-    # TODO: Count entries by log level
-    # TODO: Find the time range (first and last entry)
-    # TODO: Find the most frequent messages
-    # TODO: Print a formatted report
-    # HINT: collections.Counter is useful for counting
-    pass
-
-
+    counts = Counter(e["level"] for e in entries)
+    first_entry = entries[0]["timestamp"] if entries else None
+    last_entry = entries[-1]["timestamp"] if entries else None
+    common_messages = Counter(e["message"] for e in entries).most_common(5)
+    print(f"Log Analysis Report for {filepath}")
+    print(f"Total entries: {len(entries)}")
+    print(f"Time range: {first_entry} to {last_entry}")
+    print("Entries by level:")
+    for level, count in counts.items():
+        print(f"  {level}: {count}")
+    print("Most frequent messages:")
+    for message, count in common_messages:
+        print(f"  {message}: {count}")
+    
 def main():
-    """Main function."""
-    # TODO: Parse arguments
-    # TODO: Read the log file
-    # TODO: Filter entries based on arguments
-    # TODO: Generate the report
-    pass
+    args = parse_arguments()
+    entries = read_log_file(args.log_file)
+    filtered = filter_entries(entries, level=args.level, keyword=args.keyword, after=args.after, before=args.before)
+    generate_report(filtered, args.log_file)
+
 
 
 if __name__ == "__main__":
