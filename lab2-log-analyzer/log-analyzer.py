@@ -36,17 +36,27 @@ def read_log_file(filepath):
 
 
 def filter_entries(entries, level=None, keyword=None, after=None, before=None):
-    """Filter log entries based on criteria."""
-    # TODO: Start with all entries
-    # TODO: If level is set, keep only entries at that level or higher
-    # TODO: If keyword is set, keep only entries whose message contains that keyword
-    # TODO: If after/before is set, keep only entries within that time range
-    # TODO: Return the filtered list
-    pass
+    #Filter log entries based on criteria.
+    results = entries
+    if level is not None:
+        level_order = {"DEBUG": 0, "INFO": 1, "WARNING": 2, "ERROR": 3}
+        results = [e for e in results if level_order[e["level"]] >= level_order[level]]
+    if keyword is not None:
+        results = [e for e in results if keyword.lower() in e["message"].lower()]
+    if after is not None:
+        results = [e for e in results if e["timestamp"] >= after]
+    if before is not None:
+        results = [e for e in results if e["timestamp"] <= before]
+    return results
+
+
+    
 
 
 def generate_report(entries, filepath):
-    """Generate and print the summary report."""
+    #Generate and print the summary report.
+
+ 
     # TODO: Count entries by log level
     # TODO: Find the time range (first and last entry)
     # TODO: Find the most frequent messages
