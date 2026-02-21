@@ -18,17 +18,11 @@ def parse_arguments():
 def parse_log_line(line):
     """Parse a single log line into its components (timestamp, level, message)."""
     parts = line.split((" - "))
-        return {
+    return {
             "timestamp": datetime.strptime(parts[0], "%Y-%m-%d %H:%M:%S,%f"),
             "level": parts[1],
             "message": parts[2]
         }
-    # TODO: Split the line into timestamp, level, and message
-    # TODO: Return them as a dictionary
-    # HINT: The format is "2026-02-16 12:00:01,194 - INFO - Monitor started."
-    #       Split on " - " to get the parts
-    pass
-
 
 def read_log_file(filepath):
     """Read log file and return list of parsed entries."""
