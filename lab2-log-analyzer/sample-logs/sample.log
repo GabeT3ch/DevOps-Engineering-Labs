@@ -1,0 +1,10 @@
+2026-02-21 08:00:01,000 - INFO - User login successful
+2026-02-21 08:05:23,000 - WARNING - Failed login attempt from 192.168.1.105
+2026-02-21 08:10:44,000 - ERROR - Multiple failed login attempts detected
+2026-02-21 08:15:12,000 - INFO - User logout
+2026-02-21 08:20:33,000 - WARNING - Failed login attempt from 192.168.1.105
+2026-02-21 08:25:01,000 - ERROR - Unauthorized access attempt blocked
+2026-02-21 08:30:55,000 - INFO - System scan completed
+2026-02-21 08:35:22,000 - DEBUG - Connection timeout on port 22
+2026-02-21 08:40:11,000 - ERROR - Multiple failed login attempts detected
+2026-02-21 08:45:00,000 - INFO - User login successful
