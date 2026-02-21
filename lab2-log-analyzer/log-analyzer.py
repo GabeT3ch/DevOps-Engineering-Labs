@@ -1,7 +1,6 @@
 #Log Analyzer
 #Parses system log files, categorizes entries by severity,and generates a summary report.
 
-
 import argparse
 from datetime import datetime
 from collections import Counter
@@ -9,12 +8,13 @@ from collections import Counter
 
 def parse_arguments():
     """Set up command-line arguments."""
-    # TODO: Create an ArgumentParser
-    # TODO: Add a positional argument for the log file path
-    # TODO: Add optional arguments for --level, --keyword, --after, --before
-    # HINT: argparse.ArgumentParser(), parser.add_argument()
-    pass
-
+    parser = argparse.ArgumentParser(description="Log Analyzer")
+    parser.add_argument("log_file", help="Path to the log file")
+    parser.add_argument("--level", choices=["DEBUG", "INFO", "WARNING", "ERROR"], help="Filter by log level")
+    parser.add_argument("--keyword", help="Filter by keyword in message")
+    parser.add_argument("--after", type=datetime.fromisoformat, help="Filter entries after this timestamp")
+    parser.add_argument("--before", type=datetime.fromisoformat, help="Filter entries before this timestamp")
+    return parser.parse_args()
 
 def parse_log_line(line):
     """Parse a single log line into its components (timestamp, level, message)."""
