@@ -1,12 +1,15 @@
 # DevOps/DevSecOps Engineering Labs
 
-Hands-on labs focused on the core skills of DevOps and infrastructure engineering , automation, monitoring, CI/CD, containers, and infrastructure as code. Each lab solves a real operational problem using tools and patterns found in production environments.
+Hands-on labs focused on the core skills of DevOps and infrastructure engineering — automation, monitoring, CI/CD, containers, and infrastructure as code. Each lab solves a real operational problem using tools and patterns found in production environments.
 
 ## Labs
 
 | Lab | Title | Tools | Status |
 |-----|-------|-------|--------|
-| 01 | System Resource Monitor | Python, psutil, YAML | In Progress |
+| 01 | System Resource Monitor | Python, psutil, PyYAML | Complete |
+| 02 | Security Log Analyzer | Python, PyYAML | Complete |
+| 03 | Service Health Checker | Python, requests | Planned |
+| 04 | CI/CD Pipeline | GitHub Actions, Docker | Planned |
 
 ## About
 
