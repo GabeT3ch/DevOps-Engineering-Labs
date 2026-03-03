@@ -1,5 +1,4 @@
 # Service Health Checker - Monitors HTTP/HTTPS endpoints and reports availability and response time.
-
 import requests
 import yaml
 import logging
@@ -8,9 +7,17 @@ from datetime import datetime
 
 
 def load_config(config_path="config.yaml"):
-    # Load list of services to monitor and settings from config file.
-    # Use yaml.safe_load just like Lab 1 and return the config dict.
-    pass
+    try:
+        
+        with open(config_path, "r") as f:
+            return yaml.safe_load(f)
+    except FileNotFoundError:
+        logging.error(f"Config file {config_path} not found.")
+        return None
+    except yaml.YAMLError as e:
+        logging.error(f"Error parsing YAML config: {e}")
+        return None
+    
 
 
 def setup_logging(log_file):
