@@ -1,0 +1,20 @@
+2026-03-17 20:11:08,040 - ERROR - Error checking service Fake Down Site: HTTPSConnectionPool(host='thiswebsitedoesnotexist12345.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='thiswebsitedoesnotexist12345.com', port=443): Failed to resolve 'thiswebsitedoesnotexist12345.com' ([Errno -2] Name or service not known)"))
+2026-03-17 20:11:08,041 - INFO - Google - UP - 258.52108001708984 ms
+2026-03-17 20:11:08,041 - INFO - GitHub - UP - 223.0052947998047 ms
+2026-03-17 20:11:08,041 - INFO - Fake Down Site - DOWN - None ms
+2026-03-17 20:11:08,041 - INFO - Summary: 2 UP, 0 DEGRADED, 1 DOWN
+2026-03-17 20:12:32,284 - ERROR - Error checking service Fake Down Site: HTTPSConnectionPool(host='thiswebsitedoesnotexist12345.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='thiswebsitedoesnotexist12345.com', port=443): Failed to resolve 'thiswebsitedoesnotexist12345.com' ([Errno -2] Name or service not known)"))
+2026-03-17 20:12:32,284 - INFO - Google - UP - 195.2977180480957 ms
+2026-03-17 20:12:32,284 - INFO - GitHub - UP - 227.6742458343506 ms
+2026-03-17 20:12:32,284 - INFO - Fake Down Site - DOWN - None ms
+2026-03-17 20:12:32,284 - INFO - Summary: 2 UP, 0 DEGRADED, 1 DOWN
+2026-03-17 20:13:23,226 - ERROR - Error checking service Fake Down Site: HTTPSConnectionPool(host='thiswebsitedoesnotexist12345.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='thiswebsitedoesnotexist12345.com', port=443): Failed to resolve 'thiswebsitedoesnotexist12345.com' ([Errno -2] Name or service not known)"))
+2026-03-17 20:13:23,226 - INFO - Google - UP - 199.16081428527832 ms
+2026-03-17 20:13:23,226 - INFO - GitHub - UP - 235.2595329284668 ms
+2026-03-17 20:13:23,226 - INFO - Fake Down Site - DOWN - None ms
+2026-03-17 20:13:23,226 - INFO - Summary: 2 UP, 0 DEGRADED, 1 DOWN
+2026-03-17 20:13:55,918 - ERROR - Error checking service Fake Down Site: HTTPSConnectionPool(host='thiswebsitedoesnotexist12345.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='thiswebsitedoesnotexist12345.com', port=443): Failed to resolve 'thiswebsitedoesnotexist12345.com' ([Errno -2] Name or service not known)"))
+2026-03-17 20:13:55,919 - INFO - Google - UP - 191.0 ms
+2026-03-17 20:13:55,919 - INFO - GitHub - UP - 187.7 ms
+2026-03-17 20:13:55,919 - INFO - Fake Down Site - DOWN - N/A
+2026-03-17 20:13:55,919 - INFO - Summary: 2 UP, 0 DEGRADED, 1 DOWN

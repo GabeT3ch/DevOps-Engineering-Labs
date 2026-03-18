@@ -1,0 +1,17 @@
+services:
+  - name: "Google"
+    url: "https://www.google.com"
+    timeout: 5
+    response_time_threshold: 500
+
+  - name: "GitHub"
+    url: "https://github.com"
+    timeout: 5
+    response_time_threshold: 500
+
+  - name: "Fake Down Site"
+    url: "https://thiswebsitedoesnotexist12345.com"
+    timeout: 3
+    response_time_threshold: 500
+
+log_file: "health_check.log"
