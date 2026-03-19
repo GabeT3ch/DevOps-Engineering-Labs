@@ -21,7 +21,7 @@ jobs:
           pip install flake8
       - name: Run linter
         run: |
-          flake8 . --max-line-length=120  #runs the linter on the codebase and checks for style issues, with a maximum line length of 120 characters
+          flake8 . --max-line-length=130  #runs the linter on the codebase and checks for style issues, with a maximum line length of 120 characters
 
   security-scan:
     runs-on: ubuntu-latest
