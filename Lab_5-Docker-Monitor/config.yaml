@@ -1,0 +1,7 @@
+thresholds:
+  cpu_percent: 80
+  memory_percent: 85
+  disk_percent: 90
+
+interval_seconds: 10
+log_file: "monitor.log"
