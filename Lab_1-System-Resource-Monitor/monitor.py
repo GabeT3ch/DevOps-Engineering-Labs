@@ -1,13 +1,9 @@
 # System Resource Monitor Monitors CPU, memory, and disk usage on the local machine.
 # Logs readings and alerts when thresholds are exceeded.
-
-
-from logging import config
 import psutil
 import yaml
 import time
 import logging
-from datetime import datetime
 
 
 def load_config(config_path="config.yaml"):

@@ -1,10 +1,8 @@
 # Service Health Checker - Monitors HTTP/HTTPS endpoints and reports availability and response time.
-from unittest import result
 import requests
 import yaml
 import logging
 import time
-from datetime import datetime
 
 
 def load_config(config_path="config.yaml"):
