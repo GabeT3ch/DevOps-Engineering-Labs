@@ -8,7 +8,41 @@ on:
 
 jobs:
   lint:
+    runs-on: ubuntu-latest  #provides server environment for the job to run on from github-hosted runners
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+      - name: Run linter
+        run: |
+          flake8 . --max-line-length=120  #runs the linter on the codebase and checks for style issues, with a maximum line length of 120 characters
 
   security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install Bandit  #uses Bandit, a security linter for Python code, to identify common security issues in the codebase
+        run: pip install bandit
+      - name: Run security scan
+        run: bandit -r . --severity-level medium
 
   secret-detection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4    #this step checks out the code from the repository so that the Gitleaks action can scan it for secrets. The fetch-depth: 0 option ensures that the entire commit history is available for scanning, which is important for detecting secrets that may have been committed in the past.
+        with:
+          fetch-depth: 0
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
