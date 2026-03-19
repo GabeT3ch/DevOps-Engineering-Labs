@@ -1,5 +1,5 @@
-#System Resource Monitor Monitors CPU, memory, and disk usage on the local machine.
-#Logs readings and alerts when thresholds are exceeded.
+# System Resource Monitor Monitors CPU, memory, and disk usage on the local machine.
+# Logs readings and alerts when thresholds are exceeded.
 
 
 from logging import config
@@ -11,14 +11,14 @@ from datetime import datetime
 
 
 def load_config(config_path="config.yaml"):
-    #Load monitoring thresholds and settings from config file.
+    # Load monitoring thresholds and settings from config file.
     with open(config_path, 'r') as file:
         config = yaml.safe_load(file)
         return config
 
 
 def setup_logging(log_file):
-    #Configure logging to both file and terminal.
+    # Configure logging to both file and terminal.
     logging.basicConfig(filename=log_file, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.INFO)
@@ -27,9 +27,8 @@ def setup_logging(log_file):
     logging.getLogger().addHandler(console_handler)
 
 
-
 def get_system_metrics():
-    #Collect current CPU, memory, and disk usage
+    # Collect current CPU, memory, and disk usage
     cpu_percent = psutil.cpu_percent(interval=1)
     memory_info = psutil.virtual_memory()
     disk_info = psutil.disk_usage('/')
@@ -42,7 +41,7 @@ def get_system_metrics():
 
 
 def check_thresholds(metrics, thresholds):
-    #Compare current metrics against configured thresholds. Return list of alerts
+    # Compare current metrics against configured thresholds. Return list of alerts
     alerts = []
     for metric, value in metrics.items():
         if metric in thresholds and value > thresholds[metric]:
@@ -58,7 +57,8 @@ def main():
     try:
         while True:
             metrics = get_system_metrics()
-            logging.info(f"CPU: {metrics['cpu_percent']}% | Memory: {metrics['memory_percent']}% | Disk: {metrics['disk_percent']:.1f}%")
+            logging.info(
+                f"CPU: {metrics['cpu_percent']}% | Memory: {metrics['memory_percent']}% | Disk: {metrics['disk_percent']:.1f}%")
             alerts = check_thresholds(metrics, config['thresholds'])
             for alert in alerts:
                 logging.warning(alert)
@@ -69,4 +69,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    

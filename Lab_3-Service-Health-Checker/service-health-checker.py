@@ -9,7 +9,7 @@ from datetime import datetime
 
 def load_config(config_path="config.yaml"):
     try:
-        
+
         with open(config_path, "r") as f:
             return yaml.safe_load(f)
     except FileNotFoundError:
@@ -18,7 +18,6 @@ def load_config(config_path="config.yaml"):
     except yaml.YAMLError as e:
         logging.error(f"Error parsing YAML config: {e}")
         return None
-    
 
 
 def setup_logging(log_file):
@@ -56,6 +55,7 @@ def check_service(name, url, timeout, response_time_threshold):
         "status_code": status_code
     }
 
+
 def generate_report(results):
     for result in results:
         response_time = f"{result['response_time_ms']:.1f} ms" if result['response_time_ms'] else "N/A"
@@ -64,6 +64,7 @@ def generate_report(results):
     degraded = sum(1 for r in results if r['status'] == 'DEGRADED')
     down = sum(1 for r in results if r['status'] == 'DOWN')
     logging.info(f"Summary: {up} UP, {degraded} DEGRADED, {down} DOWN")
+
 
 def main():
     config = load_config(config_path="config.yaml")
@@ -84,7 +85,7 @@ def main():
         results.append(result)
 
     generate_report(results)
-  
+
 
 if __name__ == "__main__":
     main()
